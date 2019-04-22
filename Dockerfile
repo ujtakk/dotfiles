@@ -1,6 +1,6 @@
-FROM debian:jessie
+FROM debian:latest
 
-MAINTAINER Takayuki Ujiie "takau@easter.kuee.kyoto-u.ac.jp"
+MAINTAINER Takayuki Ujiie "ujtakk@gmail.com"
 
 RUN apt-get update && apt-get install -y \
   build-essential \
@@ -15,12 +15,12 @@ RUN apt-get update && apt-get install -y \
 
 RUN echo "root:root" | chpasswd
 
-RUN useradd -m -d /home/ujtak -s /usr/bin/zsh ujtak
-USER ujtak
+RUN useradd -m -d /home/ujtakk -s /usr/bin/zsh ujtakk
+USER ujtakk
 
-WORKDIR /home/ujtak
+WORKDIR /home/ujtakk
 
-RUN git clone https://github.com/ujtak/dotfiles
+RUN git clone https://github.com/ujtakk/dotfiles
 RUN cd dotfiles && zsh deploy.sh
 
 ENTRYPOINT ["/usr/bin/zsh"]
