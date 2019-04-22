@@ -1,0 +1,16 @@
+"3.9 (created: 2015/02/15 15:49:05)
+
+" hintchars
+set hintchars=asdfghjkl
+noremap f ;o
+
+" :clip コマンドで evernote のウィンドウが開く。
+command clip javascript evernote_doAction()
+
+" nでprev, pでnextのほうがキーの位置的にしっくり
+" cf.) <C-w>p - go to previous (last accessed) window
+noremap <C-p> gt
+" cf.) <C-w>n - open new window, N lines high
+noremap <C-n> gT
+
+" vim: set ft=vimperator:
