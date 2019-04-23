@@ -28,8 +28,8 @@ hook_add = '''"{{{
     nnoremap  [Denite] <Nop>
     nmap      <Space> [Denite]
 
-    " nnoremap <silent> [Denite] :<C-u>Denite file_rec file_mru<CR>
-    nnoremap <silent> [Denite] :<C-u>Denite file_rec<CR>
+    " nnoremap <silent> [Denite] :<C-u>Denite file/rec file_mru<CR>
+    nnoremap <silent> [Denite] :<C-u>Denite file/rec<CR>
   endif
 " }}}'''
 
