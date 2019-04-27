@@ -73,6 +73,14 @@ repo = 'mxw/vim-jsx'
 on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['typescript', 'typescript.tsx']
+
+[[plugins]]
 repo = 'moll/vim-node'
 on_ft = ['javascript']
 

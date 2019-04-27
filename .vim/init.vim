@@ -324,6 +324,8 @@ autocmd vimrc Filetype tex set colorcolumn=80
 
 " HTML
 " autocmd vimrc BufNewFile *.html s:make_template("template.html", "0")
+autocmd vimrc BufNewFile,BufRead *.ts set filetype=typescript
+autocmd vimrc BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 
 " Markdown
 autocmd vimrc BufNewFile,BufRead *.md set filetype=markdown
