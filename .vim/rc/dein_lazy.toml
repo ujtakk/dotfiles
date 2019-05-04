@@ -115,3 +115,6 @@ hook_source = '''"{{{
 repo = 'tikhomirov/vim-glsl'
 on_ft = 'glsl'
 
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
