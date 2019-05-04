@@ -118,3 +118,6 @@ on_ft = 'glsl'
 [[plugins]]
 repo = 'fatih/vim-go'
 on_ft = 'go'
+hook_add = '''"{{{
+  autocmd vimrc Filetype go set tabstop=2
+"}}}'''
