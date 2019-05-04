@@ -324,8 +324,11 @@ autocmd vimrc Filetype tex set colorcolumn=80
 
 " HTML
 " autocmd vimrc BufNewFile *.html s:make_template("template.html", "0")
-autocmd vimrc BufNewFile,BufRead *.ts set filetype=typescript
-autocmd vimrc BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+autocmd vimrc BufNewFile,BufRead *.ts set filetype=javascript
+autocmd vimrc BufNewFile,BufRead *.tsx set filetype=javascript.jsx
+
+" JSON
+let g:vim_json_syntax_conceal = 0
 
 " Markdown
 autocmd vimrc BufNewFile,BufRead *.md set filetype=markdown
@@ -343,9 +346,6 @@ autocmd vimrc BufNewFile,BufRead *.bnf set filetype=bnf
 
 " wanderlust conf
 autocmd vimrc BufNewFile,BufRead .wl set filetype=lisp
-
-" JSON
-let g:vim_json_syntax_conceal = 0
 
 " OCaml
 autocmd vimrc BufNewFile,BufRead *.ml set filetype=ocaml

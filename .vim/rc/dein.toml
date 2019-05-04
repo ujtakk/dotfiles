@@ -56,8 +56,8 @@ repo = 'vim-scripts/AnsiEsc.vim'
 [[plugins]]
 repo = 'Konfekt/FastFold'
 
-# [[plugins]]
-# repo = 'altercation/vim-colors-solarized'
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
 
 [[plugins]]
 repo = 'w0ng/vim-hybrid'

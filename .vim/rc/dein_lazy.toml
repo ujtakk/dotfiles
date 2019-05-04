@@ -65,20 +65,20 @@ repo = 'petRUShka/vim-opencl'
 on_ft = 'opencl'
 
 [[plugins]]
-repo = 'pangloss/vim-javascript'
-on_ft = ['javascript', 'javascript.jsx']
-
-[[plugins]]
-repo = 'mxw/vim-jsx'
-on_ft = ['javascript', 'javascript.jsx']
-
-[[plugins]]
 repo = 'leafgarland/typescript-vim'
 on_ft = ['typescript', 'typescript.tsx']
 
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
 on_ft = ['typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript', 'javascript.jsx']
+
+[[plugins]]
+repo = 'mxw/vim-jsx'
+on_ft = ['javascript', 'javascript.jsx']
 
 [[plugins]]
 repo = 'moll/vim-node'
