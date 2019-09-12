@@ -346,6 +346,7 @@ autocmd vimrc BufNewFile,BufRead *.bnf set filetype=bnf
 
 " wanderlust conf
 autocmd vimrc BufNewFile,BufRead .wl set filetype=lisp
+autocmd vimrc BufNewFile,BufRead .spacemacs set filetype=lisp
 
 " OCaml
 autocmd vimrc BufNewFile,BufRead *.ml set filetype=ocaml
@@ -353,7 +354,8 @@ autocmd vimrc BufNewFile,BufRead *.mly set filetype=ocamlyacc | set syntax=ocaml
 autocmd vimrc BufNewFile,BufRead *.mll set filetype=ocamllex | set syntax=ocaml
 
 " Coq
-autocmd vimrc BufNewFile,BufRead *.coq set filetype=coq
+" autocmd vimrc BufNewFile,BufRead *.v set filetype=coq
+" autocmd vimrc BufNewFile,BufRead *.v set syntax=ocaml
 
 " CUDA, OpenCL
 autocmd vimrc BufNewFile,BufRead *.cu  set filetype=cuda
