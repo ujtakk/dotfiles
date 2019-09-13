@@ -24,7 +24,8 @@ export LIBRARY_PATH=$LOCAL_DIR/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=$LOCAL_DIR/lib:$LD_LIBRARY_PATH
 export CPATH=$LOCAL_DIR/include:$CPATH
 
-source ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+# opam configuration
+test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 source $LOCAL_DIR/python-dev/bin/activate
 export GOPATH=$LOCAL_DIR/go-dev
 
@@ -207,6 +208,7 @@ less_with_unbuffer () {
     unbuffer "$@" |& less -SR
 }
 alias UL=less_with_unbuffer
+alias AG="less_with_unbuffer ag"
 
 alias -g H="| head -n "
 alias -g T="| tail -n "
@@ -276,6 +278,7 @@ alias rsync="rsync -avhz --progress --partial"
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
 alias diff="diff -u"
+alias emacs="emacs --insecure"
 if type nvim >/dev/null 2>&1; then
   alias vim="nvim"
 fi
@@ -329,3 +332,4 @@ case $OSTYPE in
 esac
 
 unset SSH_ASKPASS
+
