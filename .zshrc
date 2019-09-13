@@ -8,6 +8,7 @@ case $OSTYPE in
   darwin* )
     export PATH=/usr/local/bin:$PATH
     export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
+    export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
 
     export CPATH=/usr/include:$CPATH
 
