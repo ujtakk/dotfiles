@@ -2,6 +2,9 @@
 
 apt update
 
+apt install -y zsh
+chsh -s /usr/bin/zsh
+
 # CUI tools
 apt install -y    \
   build-essential \
@@ -16,13 +19,15 @@ apt install -y    \
   stow            \
 
 # other tools
-apt install -y    \
-  python3-venv    \
-  ruby            \
-  iverilog        \
-  emacs           \
-  clang           \
-  inkscape        \
+apt install -y      \
+  python3-venv      \
+  ruby              \
+  iverilog          \
+  emacs             \
+  clang             \
+  inkscape          \
+  silversearcher-ag \
+  expect
 
 # GUI tools
 apt install -y          \
@@ -38,10 +43,22 @@ apt install -y  \
   dbus-x11      \
 
 # tex tools
-apt install -y          \
-  texlive               \
-  texlive-lang-japanese \
-  texlive-publishers    \
-  texlive-science       \
-  latexmk               \
+# apt install -y          \
+#   texlive               \
+#   texlive-lang-japanese \
+#   texlive-publishers    \
+#   texlive-science       \
+#   latexmk               \
 
+# neovim deps
+apt install -y \
+  ninja-build \
+  gettext \
+  libtool \
+  libtool-bin \
+  autoconf \
+  automake \
+  cmake \
+  g++ \
+  pkg-config \
+  unzip

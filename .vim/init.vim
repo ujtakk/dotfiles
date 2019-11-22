@@ -159,13 +159,13 @@ set showmode
 set history=1000
 
 " ヤンクした文字は、システムのクリップボードに入れる
-" if (!has('nvim') || $DISPLAY != '') && has('clipboard')
-"   if has('unnamedplus')
-"      set clipboard& clipboard+=unnamedplus
-"   else
-"      set clipboard& clipboard+=unnamed
-"   endif
-" endif
+if (!has('nvim') || $DISPLAY != '') && has('clipboard')
+  if has('unnamedplus')
+     set clipboard& clipboard+=unnamedplus
+  else
+     set clipboard& clipboard+=unnamed
+  endif
+endif
 
 " Enable mouse support.
 set mouse=a

@@ -276,7 +276,7 @@ alias vi="/usr/bin/vi -v -u NONE"
 alias rsync="rsync -avhz --progress --partial"
 alias grep="grep -n --color=auto"
 alias egrep="egrep -n --color=auto"
-alias diff="diff -u"
+# alias diff="diff -u"
 alias emacs="emacs --insecure"
 if type nvim >/dev/null 2>&1; then
   alias vim="nvim"

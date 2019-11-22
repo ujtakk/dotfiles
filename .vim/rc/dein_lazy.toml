@@ -124,4 +124,4 @@ hook_add = '''"{{{
 
 [[plugins]]
 repo = 'ujtakk/vim-llvm'
-on_ft = 'llvm'
+on_ft = ['llvm', 'tablegen']
