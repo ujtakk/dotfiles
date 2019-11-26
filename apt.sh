@@ -3,7 +3,7 @@
 apt update
 
 apt install -y zsh
-chsh -s /usr/bin/zsh
+chsh -s /usr/bin/zsh $SUDO_USER
 
 # CUI tools
 apt install -y    \

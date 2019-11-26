@@ -14,3 +14,9 @@ mkdir -p ~/local/{src,stow}
 (cd ~/local/stow
   stow -v neovim-nightly
 )
+
+(cd ~/local
+  python3 -m venv python-dev
+  source venv/bin/activate
+  pip install -U pip setuptools
+)
