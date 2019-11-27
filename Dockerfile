@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM ubuntu:latest
 
 MAINTAINER Takayuki Ujiie "ujtakk@gmail.com"
 
@@ -13,14 +13,9 @@ RUN apt-get update && apt-get install -y \
   stow            \
   psmisc
 
-RUN echo "root:root" | chpasswd
-
-RUN useradd -m -d /home/ujtakk -s /usr/bin/zsh ujtakk
-USER ujtakk
-
-WORKDIR /home/ujtakk
-
 RUN git clone https://github.com/ujtakk/dotfiles
 RUN cd dotfiles && zsh deploy.sh
+
+RUN git clone https://github.com/neovim/neovim
 
 ENTRYPOINT ["/usr/bin/zsh"]

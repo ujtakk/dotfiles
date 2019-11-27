@@ -464,6 +464,7 @@ command! D !make diff
 "----------------------------------------------------------
 
 if has('terminal')
+  tnoremap <Esc> <C-W>N
   command! V vs | terminal++curwin
 elseif has('nvim')
   command! V vs | term
