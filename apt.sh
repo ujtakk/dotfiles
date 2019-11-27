@@ -30,17 +30,17 @@ apt install -y      \
   expect
 
 # GUI tools
-apt install -y          \
-  xinit                 \
-  x11-xserver-utils     \
-  i3                    \
-  rxvt-unicode-256color \
+# apt install -y          \
+#   xinit                 \
+#   x11-xserver-utils     \
+#   i3                    \
+#   rxvt-unicode-256color \
 
 # Japanese Environment
-apt install -y  \
-  nkf           \
-  fcitx-mozc    \
-  dbus-x11      \
+# apt install -y  \
+#   nkf           \
+#   fcitx-mozc    \
+#   dbus-x11      \
 
 # tex tools
 # apt install -y          \
