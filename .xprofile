@@ -12,8 +12,9 @@ molokai )
   ;;
 esac
 
-if [ $XDG_CURRENT_DESKTOP="i3" ]; then
-  XDG_CURRENT_DESKTOP="Unity"
-fi
+# if [ $XDG_CURRENT_DESKTOP="i3" ]; then
+#   XDG_CURRENT_DESKTOP="Unity"
+# fi
 
 xrdb ~/.Xresources
+exec /usr/bin/i3 > ~/i3log-$(date +'%F-%k-%M-%S') 2>&1
