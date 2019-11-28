@@ -17,6 +17,6 @@ mkdir -p ~/local/{src,stow}
 
 (cd ~/local
   python3 -m venv python-dev
-  source venv/bin/activate
+  source python-dev/bin/activate
   pip install -U pip setuptools
 )
