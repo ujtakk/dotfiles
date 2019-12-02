@@ -29,28 +29,6 @@ apt install -y      \
   silversearcher-ag \
   expect            \
 
-# GUI tools
-apt install -y          \
-  xinit                 \
-  x11-xserver-utils     \
-  i3                    \
-  rxvt-unicode-256color \
-  dkms                  \
-
-# Japanese Environment
-apt install -y  \
-  nkf           \
-  fcitx-mozc    \
-  dbus-x11      \
-
-# tex tools
-apt install -y          \
-  texlive               \
-  texlive-lang-japanese \
-  texlive-publishers    \
-  texlive-science       \
-  latexmk               \
-
 # neovim deps
 apt install -y \
   ninja-build \
@@ -63,3 +41,25 @@ apt install -y \
   g++ \
   pkg-config \
   unzip
+
+# GUI tools
+# apt install -y          \
+#   xinit                 \
+#   x11-xserver-utils     \
+#   i3                    \
+#   rxvt-unicode-256color \
+#   dkms                  \
+
+# Japanese Environment
+# apt install -y  \
+#   nkf           \
+#   fcitx-mozc    \
+#   dbus-x11      \
+
+# tex tools
+# apt install -y          \
+#   texlive               \
+#   texlive-lang-japanese \
+#   texlive-publishers    \
+#   texlive-science       \
+#   latexmk               \
