@@ -27,28 +27,29 @@ apt install -y      \
   clang             \
   inkscape          \
   silversearcher-ag \
-  expect
+  expect            \
 
 # GUI tools
-# apt install -y          \
-#   xinit                 \
-#   x11-xserver-utils     \
-#   i3                    \
-#   rxvt-unicode-256color \
+apt install -y          \
+  xinit                 \
+  x11-xserver-utils     \
+  i3                    \
+  rxvt-unicode-256color \
+  dkms                  \
 
 # Japanese Environment
-# apt install -y  \
-#   nkf           \
-#   fcitx-mozc    \
-#   dbus-x11      \
+apt install -y  \
+  nkf           \
+  fcitx-mozc    \
+  dbus-x11      \
 
 # tex tools
-# apt install -y          \
-#   texlive               \
-#   texlive-lang-japanese \
-#   texlive-publishers    \
-#   texlive-science       \
-#   latexmk               \
+apt install -y          \
+  texlive               \
+  texlive-lang-japanese \
+  texlive-publishers    \
+  texlive-science       \
+  latexmk               \
 
 # neovim deps
 apt install -y \
