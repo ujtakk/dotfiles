@@ -9,14 +9,14 @@ dotpath=$(cd $(dirname $0) && pwd)
   ln -s $dotpath/.zshenv
   ln -s $dotpath/.tmux.conf
 
-  mkdir .ssh
+  mkdir -p .ssh
   if [[ -e $dotpath/.ssh ]]; then
     ln -s $dotpath/.ssh/config .ssh
   fi
 
   ln -s $dotpath/.hushlogin
 
-  mkdir .vim
+  mkdir -p .vim
   ln -s $dotpath/.vim/init.vim  .vim/vimrc
   ln -s $dotpath/.vim/rc        .vim
   ln -s $dotpath/.vim/colors    .vim
@@ -28,7 +28,7 @@ dotpath=$(cd $(dirname $0) && pwd)
   ln -s $dotpath/.vim/colors    .config/nvim
   ln -s $dotpath/.vim/templates .config/nvim
 
-  mkdir .emacs.d
+  mkdir -p .emacs.d
   ln -s $dotpath/.emacs.d/init.el .emacs.d
 
   ln -s $dotpath/.ocamlinit
