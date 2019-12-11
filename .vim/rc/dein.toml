@@ -80,7 +80,7 @@ repo = 'mrtazz/simplenote.vim'
 hook_add = '''"{{{
   " let g:SimplenoteUsername = ""
   " let g:SimplenotePassword = ""
-  if filereadable("~/.simplenote_keys")
+  if filereadable(expand('~/.simplenote_keys'))
     source ~/.simplenote_keys
   endif
 

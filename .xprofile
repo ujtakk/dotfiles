@@ -6,7 +6,7 @@ london )
   ;;
 molokai )
   xrandr --output HDMI-0 --mode 1920x1080
-  xrandr --output DP-3 --mode 1920x1080
+  xrandr --output DP-3 --mode 1920x1080 --right-of HDMI-0
   ;;
 * )
   ;;
