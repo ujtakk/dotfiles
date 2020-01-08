@@ -25,7 +25,6 @@ apt install -y      \
   iverilog          \
   emacs             \
   clang             \
-  inkscape          \
   silversearcher-ag \
   expect            \
 
@@ -49,6 +48,7 @@ apt install -y \
 #   i3                    \
 #   rxvt-unicode-256color \
 #   dkms                  \
+#   inkscape              \
 
 # Japanese Environment
 # apt install -y  \
