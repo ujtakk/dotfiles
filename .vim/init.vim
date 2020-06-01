@@ -324,8 +324,8 @@ autocmd vimrc Filetype tex set colorcolumn=80
 
 " HTML
 " autocmd vimrc BufNewFile *.html s:make_template("template.html", "0")
-autocmd vimrc BufNewFile,BufRead *.ts set filetype=javascript
-autocmd vimrc BufNewFile,BufRead *.tsx set filetype=javascript.jsx
+" autocmd vimrc BufNewFile,BufRead *.ts set filetype=javascript
+" autocmd vimrc BufNewFile,BufRead *.tsx set filetype=javascript.jsx
 
 " JSON
 let g:vim_json_syntax_conceal = 0
