@@ -183,6 +183,8 @@ set helplang& helplang=ja,en
 set modelines=0
 set nomodeline
 
+set conceallevel=0
+
 "----------------------------------------------------------
 " Appearance:
 "----------------------------------------------------------
