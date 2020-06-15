@@ -154,5 +154,6 @@ bar {
   status_command i3status
 }
 
+exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id xsetroot -solid "#000000"
 for_window [title="\[float\] *"] floating enable
