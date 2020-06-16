@@ -289,7 +289,7 @@ autocmd vimrc Filetype rst set colorcolumn=80
 autocmd vimrc FileType help wincmd L
 
 " Python
-autocmd vimrc BufNewFile \(plot_\)\@!*.py call s:make_template("template.py", "$")
+" autocmd vimrc BufNewFile \(plot_\)\@!*.py call s:make_template("template.py", "$")
 autocmd vimrc BufNewFile plot_*.py call s:make_template("plot_template.py", "23")
 
 autocmd vimrc BufNewFile *.pl call s:make_template("template.pl", "5")
