@@ -461,6 +461,21 @@ command! M !make sim
 command! D !make diff
 
 
+
+"----------------------------------------------------------
+" Binary:
+"----------------------------------------------------------
+
+" ref: https://rdera.hatenadiary.org/entry/20081022/1224682665
+if &binary
+  autocmd vimrc BufReadPost * silent %!xxd -g 1
+  autocmd vimrc BufReadPost * set ft=xxd
+  autocmd vimrc BufWritePre * %!xxd -r
+  autocmd vimrc BufWritePost * silent %!xxd -g 1
+  autocmd vimrc BufWritePost * set nomod
+endif
+
+
 "----------------------------------------------------------
 " Neovim:
 "----------------------------------------------------------
@@ -473,3 +488,4 @@ elseif has('nvim')
   set sh=zsh
   tnoremap <Esc> <C-\><C-n>
 endif
+
