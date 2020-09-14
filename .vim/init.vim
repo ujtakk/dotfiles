@@ -465,15 +465,31 @@ command! D !make diff
 "----------------------------------------------------------
 " Binary:
 "----------------------------------------------------------
-
 " ref: https://rdera.hatenadiary.org/entry/20081022/1224682665
-if &binary
-  autocmd vimrc BufReadPost * silent %!xxd -g 1
-  autocmd vimrc BufReadPost * set ft=xxd
-  autocmd vimrc BufWritePre * %!xxd -r
-  autocmd vimrc BufWritePost * silent %!xxd -g 1
-  autocmd vimrc BufWritePost * set nomod
-endif
+
+function! s:binary_readpost()
+  if &binary
+    silent %!xxd -g 1
+    set ft=xxd
+  endif
+endfunction
+
+function! s:binary_writepre()
+  if &binary
+    %!xxd -r
+  endif
+endfunction
+
+function! s:binary_writepost()
+  if &binary
+    silent %!xxd -g 1
+    set nomod
+  endif
+endfunction
+
+autocmd vimrc BufReadPost * call s:binary_readpost()
+autocmd vimrc BufWritePre * call s:binary_writepre()
+autocmd vimrc BufWritePost * call s:binary_writepost()
 
 
 "----------------------------------------------------------
