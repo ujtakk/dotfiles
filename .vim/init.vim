@@ -457,9 +457,7 @@ command! Edit tabnew $MYVIMRC
 command! Dein tabnew $TOML | vs $LAZY_TOML
 command! Update call dein#update()
 
-command! M !make sim
-command! D !make diff
-
+command! -nargs=1 -complete=file D vertical diffsplit <args>
 
 
 "----------------------------------------------------------
