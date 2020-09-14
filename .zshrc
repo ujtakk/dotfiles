@@ -24,7 +24,7 @@ export LIBRARY_PATH=$LOCAL_DIR/lib:$LIBRARY_PATH
 export LD_LIBRARY_PATH=$LOCAL_DIR/lib:$LD_LIBRARY_PATH
 export CPATH=$LOCAL_DIR/include:$CPATH
 export CMAKE_MODULE_PATH=$LOCAL_DIR/lib/cmake:$CMAKE_MODULE_PATH
-export PKG_CONFIG_PATH=$LOCAL_DIR/lib/pkgconfig
+export PKG_CONFIG_PATH=$LOCAL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 
 # opam configuration
 test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
