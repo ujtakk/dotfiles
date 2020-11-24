@@ -1,8 +1,3 @@
-if [ -f ~/.zshrc.local ];
-then
-  . ~/.zshrc.local
-fi
-
 # private clients env
 case $OSTYPE in
   darwin* )
@@ -259,6 +254,7 @@ fi
 # }}}
 
 # Common aliases
+alias sudo='sudo '
 alias h='history -20'
 
 alias du='du -h'
@@ -335,3 +331,7 @@ esac
 
 unset SSH_ASKPASS
 
+if [ -f ~/.zshrc.local ];
+then
+  . ~/.zshrc.local
+fi
