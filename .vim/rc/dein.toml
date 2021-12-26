@@ -76,7 +76,7 @@ hook_add = '''"{{{
 "}}}'''
 
 [[plugins]]
-repo = 'mrtazz/simplenote.vim'
+repo = 'simplenote-vim/simplenote.vim'
 hook_add = '''"{{{
   " let g:SimplenoteUsername = ""
   " let g:SimplenotePassword = ""
