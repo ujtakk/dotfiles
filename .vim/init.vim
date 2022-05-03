@@ -292,6 +292,11 @@ autocmd vimrc FileType help wincmd L
 " autocmd vimrc BufNewFile \(plot_\)\@!*.py call s:make_template("template.py", "$")
 autocmd vimrc BufNewFile plot_*.py call s:make_template("plot_template.py", "23")
 
+autocmd vimrc Filetype go set noexpandtab
+autocmd vimrc Filetype go set tabstop=4
+autocmd vimrc Filetype go set softtabstop=4
+autocmd vimrc Filetype go set shiftwidth=4
+
 autocmd vimrc BufNewFile *.pl call s:make_template("template.pl", "5")
 
 " Shell Script

@@ -23,6 +23,10 @@ hook_add = '''"{{{
 "}}}'''
 
 [[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
 repo = 'kana/vim-repeat'
 
 [[plugins]]
@@ -114,10 +118,6 @@ hook_source = '''"{{{
 [[plugins]]
 repo = 'tikhomirov/vim-glsl'
 on_ft = 'glsl'
-
-[[plugins]]
-repo = 'fatih/vim-go'
-on_ft = 'go'
 
 [[plugins]]
 repo = 'ujtakk/vim-llvm'
