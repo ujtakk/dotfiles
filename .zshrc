@@ -24,7 +24,6 @@ export PKG_CONFIG_PATH=$LOCAL_DIR/lib/pkgconfig:$PKG_CONFIG_PATH
 # opam configuration
 test -r ~/.opam/opam-init/init.zsh && . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 source $LOCAL_DIR/python-dev/bin/activate
-export GOPATH=$LOCAL_DIR/go-dev
 
 
 ###########################################################
