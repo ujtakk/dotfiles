@@ -1,0 +1,1 @@
+../../../.vim/dein/repos/github.com/w0ng/vim-hybrid/colors/hybrid.vim
