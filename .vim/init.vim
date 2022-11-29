@@ -45,6 +45,11 @@ let g:loaded_spellfile_plugin  = 1
 let g:loaded_man               = 1
 let g:loaded_matchit           = 1
 
+" Disable neovim features
+let g:loaded_ruby_provider = 0
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
+
 " netrw
 " ref: https://shapeshed.com/vim-netrw/
 let g:netrw_banner = 0
