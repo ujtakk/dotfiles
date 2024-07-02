@@ -8,8 +8,10 @@ export PAGER=less
 export EDITOR=vim
 export TERMINAL=urxvt
 export BROWSER=google-chrome
-export LANG=ja_JP.UTF-8
-export LC_ALL=ja_JP.UTF-8
+export LANG=C
+export LC_ALL=C
+# export LANG=ja_JP.UTF-8
+# export LC_ALL=ja_JP.UTF-8
 # export LANG=en_US.UTF-8
 # export LC_ALL=en_US.UTF-8
 
