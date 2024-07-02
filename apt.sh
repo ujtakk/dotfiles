@@ -5,7 +5,7 @@ apt update
 apt install -y zsh
 chsh -s /usr/bin/zsh $SUDO_USER
 
-# CUI tools
+### CUI tools
 apt install -y    \
   build-essential \
   sudo            \
@@ -18,7 +18,7 @@ apt install -y    \
   tmux            \
   stow            \
 
-# other tools
+### other tools
 apt install -y      \
   python3-venv      \
   ruby              \
@@ -29,7 +29,7 @@ apt install -y      \
   ripgrep           \
   expect            \
 
-# neovim deps
+### neovim deps
 apt install -y \
   ninja-build \
   gettext \
@@ -42,7 +42,7 @@ apt install -y \
   pkg-config \
   unzip
 
-# # GUI tools
+### GUI tools
 # apt install -y          \
 #   xinit                 \
 #   x11-xserver-utils     \
@@ -50,14 +50,14 @@ apt install -y \
 #   rxvt-unicode-256color \
 #   dkms                  \
 #   inkscape              \
- 
-# # Japanese Environment
+
+### Japanese Environment
 # apt install -y  \
 #   nkf           \
 #   fcitx-mozc    \
 #   dbus-x11      \
- 
-# # tex tools
+
+### tex tools
 # apt install -y          \
 #   texlive               \
 #   texlive-lang-japanese \
