@@ -93,3 +93,18 @@ hook_add = '''"{{{
   let g:SimplenoteSortOrder="pinned,title,tags"
   let g:SimplenoteFiletype="markdown"
 "}}}'''
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'kana/vim-repeat'
+
+[[plugins]]
+repo = 'tyru/caw.vim'
+# on_map = {nx = '<Plug>'}
+depends = ['vim-repeat']
+hook_add = '''"{{{
+  nmap _ <Plug>(caw:hatpos:toggle)
+  vmap _ <Plug>(caw:hatpos:toggle)
+"}}}'''
