@@ -140,6 +140,22 @@ alias lao='ls -latrc --color=auto'
 #  ;;
 #esac
 
+### prompt
+setopt prompt_subst
+PROMPTCOLOR=31
+
+# ターム内のプロンプトの設定
+autoload -U colors && colors
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git:*' formats ':(%b)'
+
+PROMPT='%{$fg[blue]%}%n@%M$vcs_info_msg_0_:%4~%{$reset_color%}
+%(!.#.$) '
+export VIRTUAL_ENV_DISABLE_PROMPT=1
+
 
 ###########################################################
 # completion
