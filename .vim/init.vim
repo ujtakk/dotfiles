@@ -101,8 +101,8 @@ Plug 'Konfekt/FastFold'
 
 Plug 'kana/vim-repeat'
 Plug 'tyru/caw.vim'
-nmap _ <Plug>(caw:hatpos:toggle)
-vmap _ <Plug>(caw:hatpos:toggle)
+nmap <Space> <Plug>(caw:hatpos:toggle)
+vmap <Space> <Plug>(caw:hatpos:toggle)
 
 " Plug 'w0rp/ale'
 " let g:ale_sign_error = '⨉'
