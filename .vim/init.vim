@@ -63,40 +63,142 @@ let g:netrw_winsize = 20
 " augroup END
 
 "----------------------------------------------------------
-" Plugin REQUIRED: dein
+" Plugin REQUIRED: vim-plug
 "----------------------------------------------------------
 
-" プラグインが実際にインストールされるディレクトリ
-let s:dein_dir = expand($VIMDIR . '/dein')
-
-" dein.vim がなければ github から落としてくる
-if &runtimepath !~# '/dein.vim'
-  " dein.vim 本体
-  let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-  if !isdirectory(s:dein_repo_dir)
-    execute 'r!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir '> /dev/null 2>&1'
-  endif
-  execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
+" ref: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+let data_dir = has('nvim') ? '~/.config/nvim' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
-" TOML を読み込み、キャッシュしておく
-if dein#load_state(s:dein_dir)
-  call dein#begin(s:dein_dir)
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall | source $MYVIMRC
+\| endif
 
-  call dein#load_toml($TOML,      {'lazy' : 0})
-  call dein#load_toml($LAZY_TOML, {'lazy' : 1})
+call plug#begin()
 
-  call dein#end()
-  call dein#save_state()
+" :help plug-options
+Plug 'junegunn/vim-plug'
+
+Plug 'w0ng/vim-hybrid'
+" Plug 'altercation/vim-colors-solarized'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#syntastic#enabled = 1
+
+Plug 'Yggdroot/indentLine'
+
+Plug 'bronson/vim-trailing-whitespace'
+
+Plug 'vim-scripts/AnsiEsc.vim'
+
+Plug 'Konfekt/FastFold'
+
+Plug 'kana/vim-repeat'
+Plug 'tyru/caw.vim'
+nmap _ <Plug>(caw:hatpos:toggle)
+vmap _ <Plug>(caw:hatpos:toggle)
+
+" Plug 'w0rp/ale'
+" let g:ale_sign_error = '⨉'
+" let g:ale_sign_warning = '⚠'
+
+Plug 'ujtakk/simplenote.vim'
+" let g:SimplenoteUsername = ""
+" let g:SimplenotePassword = ""
+if filereadable(expand('~/.simplenote_keys'))
+  source ~/.simplenote_keys
+endif
+let g:SimplenoteVertical = 1
+let g:SimplenoteListSize = 40
+let g:SimplenoteSingleWindow = 1
+" let g:SimplenoteNoteFormat="[%D] %N%>%T"
+let g:SimplenoteNoteFormat="%N [%T] [%D]"
+let g:SimplenoteStrftime="%Y/%m/%d-%T"
+let g:SimplenoteSortOrder="pinned,title,tags"
+let g:SimplenoteFiletype="markdown"
+
+if has('nvim')
+  Plug 'Shougo/context_filetype.vim', { 'on': [] }
+  Plug 'Shougo/deoplete.nvim', { 'on': [] }
+  let g:deoplete#enable_at_startup = 1
+
+  augroup load_insert_enter
+    autocmd!
+    autocmd InsertEnter * call plug#load('context_filetype.vim', 'deoplete.nvim')
+                       \| autocmd! load_insert_enter
+  augroup END
 endif
 
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vim-scripts/bnf.vim', { 'for': 'bnf' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'neovimhaskell/haskell-vim', { 'for': 'haskell' }
+Plug 'ujtakk/vim-verb', { 'for': 'verb' }
+Plug 'octol/vim-cpp-enhanced-highlight', { 'for': ['c', 'cpp', 'cuda'] }
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let c_no_curly_error=1
+Plug 'petRUShka/vim-opencl', { 'for': 'opencl' }
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript', 'typescript.jsx'] }
+Plug 'peitalin/vim-jsx-typescript', { 'for': ['typescript', 'typescript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug 'othree/html5.vim', { 'for': 'html' }
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }
+Plug 'chiphogg/vim-prototxt', { 'for': 'prototxt' }
+Plug 'vim-python/python-syntax', { 'for': 'python' }
+let g:python_highlight_all = 1
+Plug 'tikhomirov/vim-glsl', { 'for': 'glsl' }
+Plug 'ujtakk/vim-llvm', { 'for': ['llvm', 'tablegen'] }
 
-filetype plugin indent on
-syntax enable
+call plug#end()
+
+" "----------------------------------------------------------
+" " Plugin REQUIRED: dein
+" "----------------------------------------------------------
+"
+" " プラグインが実際にインストールされるディレクトリ
+" let s:dein_dir = expand($VIMDIR . '/dein')
+"
+" " dein.vim がなければ github から落としてくる
+" if &runtimepath !~# '/dein.vim'
+"   " dein.vim 本体
+"   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
+"   if !isdirectory(s:dein_repo_dir)
+"     execute 'r!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir '> /dev/null 2>&1'
+"   endif
+"   execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
+" endif
+"
+" " TOML を読み込み、キャッシュしておく
+" if dein#load_state(s:dein_dir)
+"   call dein#begin(s:dein_dir)
+"
+"   call dein#load_toml($TOML,      {'lazy' : 0})
+"   call dein#load_toml($LAZY_TOML, {'lazy' : 1})
+"
+"   call dein#end()
+"   call dein#save_state()
+" endif
+"
+" " If you want to install not installed plugins on startup.
+" if dein#check_install()
+"   call dein#install()
+" endif
+"
+" filetype plugin indent on
+" syntax enable
 
 "----------------------------------------------------------
 " Basics:
