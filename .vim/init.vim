@@ -476,6 +476,10 @@ autocmd vimrc BufNewFile,BufRead *.cu  set filetype=cuda
 autocmd vimrc BufNewFile,BufRead *.cuh set filetype=cuda
 autocmd vimrc BufNewFile,BufRead *.cl  set filetype=opencl
 
+" HLSL
+autocmd vimrc BufNewFile,BufRead *.hlsl  set filetype=cuda
+autocmd vimrc BufNewFile,BufRead *.hlsli set filetype=cuda
+
 " Rust
 autocmd vimrc BufNewFile,BufRead *.rs set filetype=rust
 
