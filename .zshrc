@@ -12,6 +12,9 @@ case $OSTYPE in
   linux* )
     export LOCAL_DIR=/home/$USER/local
     ;;
+  * )
+    export LOCAL_DIR=/home/$USER/local
+    ;;
 esac
 
 export PATH=$LOCAL_DIR/bin:$PATH

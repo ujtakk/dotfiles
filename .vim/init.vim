@@ -612,10 +612,12 @@ autocmd vimrc BufWritePost * call s:binary_writepost()
 
 if has('terminal')
   tnoremap <Esc> <C-W>N
-  command! V vs | terminal++curwin
+  command! T terminal++curwin
+  command! V vs | T
 elseif has('nvim')
-  command! V vs | term
-  set sh=zsh
   tnoremap <Esc> <C-\><C-n>
+  command! T term
+  command! V vs | T
+  set sh=zsh
 endif
 
