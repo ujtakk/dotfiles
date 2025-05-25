@@ -444,6 +444,9 @@ autocmd vimrc BufNewFile,BufRead *.cl  set filetype=opencl
 autocmd vimrc BufNewFile,BufRead *.hlsl  set filetype=cuda
 autocmd vimrc BufNewFile,BufRead *.hlsli set filetype=cuda
 
+autocmd vimrc BufNewFile,BufRead *.usf set filetype=cuda
+autocmd vimrc BufNewFile,BufRead *.ush set filetype=cuda
+
 " Rust
 autocmd vimrc BufNewFile,BufRead *.rs set filetype=rust
 
