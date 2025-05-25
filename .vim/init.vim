@@ -164,42 +164,6 @@ Plug 'ujtakk/vim-llvm', { 'for': ['llvm', 'tablegen'] }
 
 call plug#end()
 
-" "----------------------------------------------------------
-" " Plugin REQUIRED: dein
-" "----------------------------------------------------------
-"
-" " プラグインが実際にインストールされるディレクトリ
-" let s:dein_dir = expand($VIMDIR . '/dein')
-"
-" " dein.vim がなければ github から落としてくる
-" if &runtimepath !~# '/dein.vim'
-"   " dein.vim 本体
-"   let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
-"   if !isdirectory(s:dein_repo_dir)
-"     execute 'r!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir '> /dev/null 2>&1'
-"   endif
-"   execute 'set runtimepath+=' . fnamemodify(s:dein_repo_dir, ':p')
-" endif
-"
-" " TOML を読み込み、キャッシュしておく
-" if dein#load_state(s:dein_dir)
-"   call dein#begin(s:dein_dir)
-"
-"   call dein#load_toml($TOML,      {'lazy' : 0})
-"   call dein#load_toml($LAZY_TOML, {'lazy' : 1})
-"
-"   call dein#end()
-"   call dein#save_state()
-" endif
-"
-" " If you want to install not installed plugins on startup.
-" if dein#check_install()
-"   call dein#install()
-" endif
-"
-" filetype plugin indent on
-" syntax enable
-
 "----------------------------------------------------------
 " Basics:
 "----------------------------------------------------------
@@ -570,7 +534,6 @@ let g:mapleader = "\\"
 
 command! Init source $MYVIMRC
 command! Edit tabnew $MYVIMRC
-command! Dein tabnew $TOML | vs $LAZY_TOML
 command! Update call dein#update()
 
 command! -nargs=1 -complete=file D vertical diffsplit <args>
