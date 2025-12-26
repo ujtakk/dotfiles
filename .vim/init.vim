@@ -69,7 +69,7 @@ let g:netrw_winsize = 20
 " ref: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 let data_dir = has('nvim') ? '~/.config/nvim' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
-  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 
@@ -84,12 +84,20 @@ call plug#begin()
 Plug 'junegunn/vim-plug'
 
 Plug 'w0ng/vim-hybrid'
-" Plug 'altercation/vim-colors-solarized'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-" let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#syntastic#enabled = 1
+if has('nvim')
+  function! s:AirlineAfterTheme()
+    "ref: https://github.com/vim-airline/vim-airline/issues/2726
+    " StatusLine colors combine with airline colors since nvim 0.11
+    hi StatusLine cterm=NONE gui=NONE
+    hi StatusLineNC cterm=NONE gui=NONE
+    hi StatusLineTerm cterm=NONE gui=NONE
+    hi StatusLineTermNC cterm=NONE gui=NONE
+  endfunction
+  autocmd User AirlineAfterTheme call s:AirlineAfterTheme()
+endif
 
 Plug 'Yggdroot/indentLine'
 
@@ -263,8 +271,8 @@ set conceallevel=0
 " colorscheme
 set background=dark
 if has('gui_running')
-  colorscheme solarized
-  let g:airline_theme = 'solarized'
+  colorscheme hybrid
+  let g:airline_theme = 'hybrid'
   set guifont=Andale\ Mono\ 12.5
   set guifontwide=Andale\ Mono\ 12
   set antialias
@@ -272,8 +280,6 @@ else
   set t_Co=256
   colorscheme hybrid
   let g:airline_theme = 'hybrid'
-  " colorscheme solarized
-  " let g:airline_theme = 'solarized'
 endif
 
 " ステータスライン設定
