@@ -104,7 +104,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'bronson/vim-trailing-whitespace'
 
 Plug 'vim-scripts/AnsiEsc.vim'
-
+ 
 Plug 'Konfekt/FastFold'
 
 Plug 'kana/vim-repeat'
@@ -130,18 +130,6 @@ let g:SimplenoteNoteFormat="%N [%T] [%D]"
 let g:SimplenoteStrftime="%Y/%m/%d-%T"
 let g:SimplenoteSortOrder="pinned,title,tags"
 let g:SimplenoteFiletype="markdown"
-
-if has('nvim')
-  Plug 'Shougo/context_filetype.vim', { 'on': [] }
-  Plug 'Shougo/deoplete.nvim', { 'on': [] }
-  let g:deoplete#enable_at_startup = 1
-
-  augroup load_insert_enter
-    autocmd!
-    autocmd InsertEnter * call plug#load('context_filetype.vim', 'deoplete.nvim')
-                       \| autocmd! load_insert_enter
-  augroup END
-endif
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'vim-scripts/bnf.vim', { 'for': 'bnf' }
